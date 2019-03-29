@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "network/network.h"
-#include "layers/fc_layer.h"
-#include "layers/activation_layer.h"
-#include "losses/losses.h"
-#include "activations/activations.h"
+#include "../network/network.h"
+#include "../layers/fc_layer.h"
+#include "../layers/activation_layer.h"
+#include "../losses/losses.h"
+#include "../activations/activations.h"
 
 template <class T>
 std::ostream& operator<<(std::ostream& os, const std::vector<T>& v){
