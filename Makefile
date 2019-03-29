@@ -7,14 +7,11 @@ MKDIR_P = mkdir -p
 RM_R = rm -r
 
 .PHONY : all
-all : directories program
+all : directories examples
 
-.PHONY : program
-program : $(OBJ)/main.o $(OBJ)/network.o $(OBJ)/matrice.o $(OBJ)/fc_layer.o $(OBJ)/activation_layer.o $(OBJ)/utils.o $(OBJ)/activations.o $(OBJ)/losses.o
-	$(CXX) $^ -o $(BIN)/$(EXEC)
-
-$(OBJ)/main.o : main.cpp
-	$(CXX) -c $< -o $@
+.PHONY : examples
+examples : $(OBJ)/network.o $(OBJ)/matrice.o $(OBJ)/fc_layer.o $(OBJ)/activation_layer.o $(OBJ)/utils.o $(OBJ)/activations.o $(OBJ)/losses.o
+	$(CXX) $^ examples/example1.cpp -o $(BIN)/example1
 
 $(OBJ)/utils.o : utils/utils.cpp utils/utils.h
 	$(CXX) -c $< -o $@
