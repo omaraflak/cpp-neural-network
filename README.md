@@ -2,7 +2,7 @@
 
 This is a neural network coded from scratch in C++.
 
-# Compile
+# Run Example(s)
 
 ```
 make
