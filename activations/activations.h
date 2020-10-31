@@ -6,6 +6,8 @@
 namespace activation {
     double sigmoid(double x);
     double sigmoidPrime(double x);
+    double tanh(double x);
+    double tanhPrime(double x);
 }
 
 #endif

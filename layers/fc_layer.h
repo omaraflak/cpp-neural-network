@@ -6,14 +6,14 @@
 
 class FCLayer : public Layer {
 private:
-    Matrice mWeights;
-    Matrice mBias;
+    Matrix mWeights;
+    Matrix mBias;
 
 public:
     FCLayer(int inputSize, int outputSize);
-    Matrice forwardPropagation(const Matrice& input);
-    Matrice backwardPropagation(const Matrice& outputError, double learningRate);
-    ~FCLayer(){}
+    Matrix forwardPropagation(const Matrix& input);
+    Matrix backwardPropagation(const Matrix& outputError, double learningRate);
+    ~FCLayer() {}
 };
 
 #endif

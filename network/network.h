@@ -7,15 +7,15 @@
 class Network {
 private:
     std::vector<Layer*> mLayers;
-    double (*mLoss)(const Matrice&, const Matrice&);
-    Matrice (*mLossPrime)(const Matrice&, const Matrice&);
+    double (*mLoss)(const Matrix&, const Matrix&);
+    Matrix (*mLossPrime)(const Matrix&, const Matrix&);
 
 public:
-    Network(){}
+    Network() {}
     void addLayers(const std::vector<Layer*>& layers);
-    void use(double (*loss)(const Matrice&, const Matrice&), Matrice (*lossPrime)(const Matrice&, const Matrice&));
-    void fit(const std::vector<Matrice>& input, const std::vector<Matrice>& output, int epochs, double learningRate);
-    std::vector<Matrice> predict(const std::vector<Matrice>& input);
+    void use(double (*loss)(const Matrix&, const Matrix&), Matrix (*lossPrime)(const Matrix&, const Matrix&));
+    void fit(const std::vector<Matrix>& input, const std::vector<Matrix>& output, int epochs, double learningRate);
+    std::vector<Matrix> predict(const std::vector<Matrix>& input);
 };
 
 #endif

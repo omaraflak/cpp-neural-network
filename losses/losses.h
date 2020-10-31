@@ -2,11 +2,11 @@
 #define LOSSES_H
 
 #include <cmath>
-#include "../utils/matrice.h"
+#include "../utils/matrix.h"
 
 namespace loss {
-    double mse(const Matrice& ytrue, const Matrice& ypred);
-    Matrice msePrime(const Matrice& ytrue, const Matrice& ypred);
+    double mse(const Matrix& ytrue, const Matrix& ypred);
+    Matrix msePrime(const Matrix& ytrue, const Matrix& ypred);
 }
 
 #endif

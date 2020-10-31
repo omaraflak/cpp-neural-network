@@ -1,18 +1,18 @@
 #ifndef LAYER_H
 #define LAYER_H
 
-#include "../utils/matrice.h"
+#include "../utils/matrix.h"
 
 class Layer {
 protected:
-    Matrice mInput;
-    Matrice mOutput;
+    Matrix mInput;
+    Matrix mOutput;
 
 public:
-    Layer(){}
-    virtual Matrice forwardPropagation(const Matrice& input)=0;
-    virtual Matrice backwardPropagation(const Matrice& outputError, double learningRate)=0;
-    virtual ~Layer(){}
+    Layer() {}
+    virtual Matrix forwardPropagation(const Matrix& input)=0;
+    virtual Matrix backwardPropagation(const Matrix& outputError, double learningRate)=0;
+    virtual ~Layer() {}
 };
 
 #endif

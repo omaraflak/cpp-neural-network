@@ -1,16 +1,16 @@
 #include "activation_layer.h"
 
-ActivationLayer::ActivationLayer(double (*activation)(double), double (*activationPrime)(double)){
+ActivationLayer::ActivationLayer(double (*activation)(double), double (*activationPrime)(double)) {
     this->mActivation = activation;
     this->mActivationPrime = activationPrime;
 }
 
-Matrice ActivationLayer::forwardPropagation(const Matrice& input){
+Matrix ActivationLayer::forwardPropagation(const Matrix& input) {
     this->mInput = input;
     this->mOutput = function(input, this->mActivation);
     return this->mOutput;
 }
 
-Matrice ActivationLayer::backwardPropagation(const Matrice& outputError, double learningRate){
+Matrix ActivationLayer::backwardPropagation(const Matrix& outputError, double learningRate) {
     return multiply(outputError, function(this->mInput, this->mActivationPrime));
 }
